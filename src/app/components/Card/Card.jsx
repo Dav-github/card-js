@@ -4,7 +4,7 @@ import configIcon from "../../../../public/Setting_line.svg";
 import sortIcon from "../../../../public/Sort_random.svg";
 import { useState } from "react";
 
-export default function Card() {
+export default function Card({ title, content }) {
     const [count, setCount] = useState(true);
 
     function handleClickSort(e) {
@@ -26,21 +26,11 @@ export default function Card() {
             </div>
             {count ? (
                 <div className="flex justify-center items-center mt-10">
-                    Title
+                    {title}
                 </div>
             ) : (
                 <div className="bg-white h-40 p-1 overflow-auto">
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Laborum aliquid, nulla unde sequi eius sit
-                        asperiores maiores fugiat quia iusto. Et accusamus modi
-                        cum debitis dolor dignissimos fugit, explicabo
-                        accusantium? Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Possimus voluptatibus assumenda, nobis
-                        accusantium natus quidem sequi distinctio beatae, optio
-                        tempora doloribus, commodi delectus labore explicabo
-                        excepturi voluptate? Nesciunt, dignissimos iure.
-                    </p>
+                    <p>{content}</p>
                 </div>
             )}
         </div>
