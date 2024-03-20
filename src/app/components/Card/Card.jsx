@@ -5,17 +5,27 @@ import sortIcon from "../../../../public/Sort_random.svg";
 import { useState } from "react";
 
 export default function Card({ title, content }) {
-    const [count, setCount] = useState(true);
+    const [contentCard, setContentCard] = useState(true);
+    const [contentConfig, setContentConfig] = useState(false);
 
     function handleClickSort(e) {
-        setCount(!count);
-        console.log(count);
+        setContentCard(!contentCard);
+    }
+
+    function handleClickConfig(e) {
+        console.log("handleClickConfig");
     }
 
     return (
         <div className="bg-neutral-400 w-96 h-64 rounded p-3">
             <div className="flex justify-around mb-4">
-                <Image src={configIcon} alt="icon config"></Image>{" "}
+                <Image
+                    onClick={(e) => {
+                        handleClickConfig(e);
+                    }}
+                    src={configIcon}
+                    alt="icon config"
+                ></Image>{" "}
                 <Image
                     onClick={(e) => {
                         handleClickSort(e);
@@ -24,7 +34,7 @@ export default function Card({ title, content }) {
                     alt="sort config"
                 ></Image>
             </div>
-            {count ? (
+            {contentCard ? (
                 <div className="flex justify-center items-center mt-10">
                     {title}
                 </div>

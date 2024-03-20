@@ -8,6 +8,21 @@
     box-sizing: border-box;
 }
 
+button {
+    background-color: white;
+    width: 72px;
+    height: 32px;
+    border-radius: 15px;
+}
+
+input {
+    border-radius: 5px;
+}
+
+.borderDebbug {
+    border: 2px solid black;
+}
+
 /* :root {
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 214, 219, 220;
